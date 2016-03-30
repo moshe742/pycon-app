@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    background-color: #fff;
+}
+
+#track-tabs > div {
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+    border: black solid 1px;
+}
+
+.list {
+    padding: 4px;
+}
+
+.list-item {
+    margin: 4px;
+    background-color: #f2f2f2;
+    vertical-align: middle;
+    height: 200px;
+}
+
+.item-text {
+    display: inline-block;
+    padding-left: 12px;
+    float: left;
+}
+
+.item-title {
+    font-size: 24px;
+}
+
+.item-speaker {
+}
+
+.item-time {
+}
+
+.item-attend {
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 50%;
+    max-width: calc(25% - 20px);
+    float: left;
+    margin: 10px;
+}
+
+.attend {
+    background-color: green;
+}
+
+.list-attend > input {
+    vertical-align: middle;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.active {
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+}
+
+@media (orientation: portrait) {
+    #track-tabs > div {
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .list {
+        width: 100%;
+    }
+
+    .list-item {
+        width: 100%;
+    }
+
+    .item-text {
+        padding-left: 12px;
+        width: 70%;
+    }
+
+    .item-title {
+    }
+
+    .item-speaker {
+    }
+
+    .item-time {
+    }
+
+    .item-attend {
+        width: 30px;
+        height: 30px;
+        margin: 10px;
+    }
+
+    .attend {
+    }
+
+    .list-attend > input {
+    }
+}
+
+@media (orientation: landscape) {
+    #track-tabs > div {
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .list {
+        width: 100%;
+    }
+
+    .list-item {
+        width: 100%;
+    }
+
+    .item-text {
+        padding-left: 12px;
+        width: 70%;
+    }
+
+    .item-title {
+    }
+
+    .item-speaker {
+    }
+
+    .item-time {
+    }
+
+    .item-attend {
+        width: 30px;
+        height: 30px;
+        margin: 10px;
+    }
+
+    .attend {
+    }
+
+    .list-attend > input {
+    }
+}
