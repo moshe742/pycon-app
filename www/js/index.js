@@ -14,9 +14,8 @@ var app = {
     },
 
     populateData: function (data) {
-        console.log(localStorage.length)
         if (window.localStorage.length < 1) {
-            app.storeData('datetime', data.time)
+            app.storeData('datetime', data.time);
             for (var day in data.schedule) {
                 for (var track in data[day]) {
                     for (i = 0; i < data[day][track].length; i++) {
@@ -79,17 +78,36 @@ var app = {
         var tracks = document.getElementsByClassName('track');
 
         Array.prototype.forEach.call(tracks, function(elem) {
+            elem.parentElement.setAttribute("class", "days");
             if (elem.id != "list" + el.id) {
                 elem.setAttribute("class", "track hide");
             } else {
                 elem.setAttribute("class", "track");
             }
         });
+        var lectureText = document.getElementById('lecture-text');
+        lectureText.setAttribute("class", "hide");
     },
 
-    lectureEvent: function () {
-        var el = event.target;
-        window.location = '/event?';
+    lectureDetails: function () {
+        var el = event.currentTarget;
+        var body = document.getElementById('body');
+        var lectureText = document.getElementById('lecture-text');
+
+        body.removeChild(lectureText)
+        lectureText = document.createElement('div');
+        lectureText.setAttribute('id', 'lecture-text');
+
+        var dataFromJson = el.id.split("-");
+        var lecture = document.createTextNode(data['schedule'][dataFromJson[0]][dataFromJson[1]][dataFromJson[2]]["lecture-abstruct"]);
+        lectureText.appendChild(lecture);
+        body.appendChild(lectureText);
+
+        var days = document.getElementsByClassName('days');
+        Array.prototype.forEach.call(days, function(elem) {
+                elem.setAttribute("class", "days hide");
+            }
+        );
     },
 
     buildSchedule: function (data) {
@@ -109,6 +127,7 @@ var app = {
 
         for (var day in data) {
             var dayTrack = document.createElement("div");
+            dayTrack.setAttribute("class", "days");
             dayTrack.setAttribute("id", day);
             for (var key in data[day]) {
                 var track = this.buildTracks(data[day][key], day, key);
@@ -138,7 +157,9 @@ var app = {
     buildItemText: function (item, day, track, num) {
         var txt = document.createElement('div');
         txt.setAttribute('class', "item-text");
-        txt.setAttribute('id', day + track + num);
+        txt.setAttribute('id', day + "-" + track + "-" + num);
+
+        this.bindEvent(txt, this.lectureDetails);
 
         var title = document.createElement('p');
         title.setAttribute('class', 'item-title');
