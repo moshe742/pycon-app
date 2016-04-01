@@ -17,14 +17,20 @@ Contribute
 
     cordova create project_name com.example.il.pycon pycon_il
     
-When project name should be the name of your choosing and it will be the name of the root directory of the project.
+When project name should be the name of your choosing and it will be the name of the root directory of the project you created.
 
-3. Delete the default xml file in the root directory created after the last point and the www directory.
+3. Create an android app to work with.
+
+    cordova platform add android
+
+If you want you can add any platform you want by running the same command with the name of the platform you want instead of android.
+
+4. Delete the default xml file in the root directory created after the last point and the www directory.
 
     cd ./project_name/
     rm -R ./www ./config.xml
 
-4. Clone the repo to your computer
+5. Clone the repo to your computer
 
     git clone https://github.com/moshe742/pycon-app.git
 
@@ -34,9 +40,11 @@ That's it, you can start working and contributing :)
 
 If there is any problem with this let me know and I will improve this accordingly.
 
+6. Copy the images from www/images to the relevant directories in pycon-app/platforms/android/res when the icon with hd is going to drawable-hdpi, the one with ld is going to drawable-ldpi and so forth.
+
 TODO:
 * Make the app with a section of my schedule which will be with all the events/lectures one chose (now there is only the possibility to choose a lecture to attend, but it only shows it as selected, and you can choose events that happen on the same time).
 * Add the ability to check if there is a new schedule every X minutes and download it if there is.
-* Use the pycon-il logo for the logo of the app.
+* Change the pycon logo to have transparent background and check for what should be the resolution for each size.
 
-If you have suggestions for more features/bug reports I would like to hear them
+If you have suggestions for more features/bug reports I would like to hear them, thanks!
