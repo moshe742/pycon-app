@@ -20,9 +20,20 @@
     <body id='body'>
         <div id="track-tabs"></div>
         <div id="lecture-text"></div>
+        <div id="myschedule"></div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/data_reader.js"></script>
         <script type="text/javascript" src="js/data.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <div class="modal" id='modal'>
+            <div class="modal-title">are you sure?</div>
+            <div class="modal-body">
+                <p><span class="capitalize">the</span> event you clicked will replace the event titled <span id="replaced-event"></span></p>
+            </div>
+            <div class="modal-buttons">
+                <button class="ok" id="btn-ok">ok</button>
+                <button class="cancel" id="btn-cancel">cancel</button>
+            </div>
+        </div>
     </body>
 </html>
