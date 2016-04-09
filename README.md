@@ -43,7 +43,6 @@ If there is any problem with this let me know and I will improve this accordingl
 6. Copy the images from www/images to the relevant directories in pycon-app/platforms/android/res when the icon with hd is going to drawable-hdpi, the one with ld is going to drawable-ldpi and so forth.
 
 TODO:
-* Make the app with a section of my schedule which will be with all the events/lectures one chose (now there is only the possibility to choose a lecture to attend, but it only shows it as selected, and you can choose events that happen on the same time).
 * Add the ability to check if there is a new schedule every X minutes and download it if there is.
 * Change the pycon logo to have transparent background and check for what should be the resolution for each size.
 
